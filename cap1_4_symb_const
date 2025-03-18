@@ -1,0 +1,31 @@
+# 1.4 Symbolic Constants 
+
+É uma boa prática de computação não jogar números ao léu em nossos programas; 
+
+A linha #define cria um _symbolic name_ ou _symbolic constant_ para um string de caracteres:
+
+**#define _name replacement list_**: nesta ocasião, toda aparição de _name_ será substituída pelo correspondente _replacement text_; 
+
+~~~C
+
+#include <stdio.h> 
+
+#define LOWER 0 /* Limite minímino da tabela */
+#define UPPER 300 /* Limite máximo da tabela */ 
+#define STEP 20 /* Tamanha da escala */ 
+
+main() 
+{ 
+int fahr; 
+
+for (fahr = LOWER; fahr <= UPPER; fahr = fahr + STEP)
+    printf ("%3d %6.qf\n", fahr, (5.0/9.0)*(fahr-32)); 
+} 
+
+~~~
+
+No programa acima, as quantidades LOWER, UPPER e STEP são contantes símbólicas e não variáveis; Assim, não podem aparecer em declarações; 
+
+As constantes simbólicas são convencionalmente escritas em caixa alta para serem diferenciadas de variáveis; Não se usa ponto e vírgula na linha #define; 
+
+
